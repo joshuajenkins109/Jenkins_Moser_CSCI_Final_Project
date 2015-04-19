@@ -1,6 +1,7 @@
 # Jenkins_Moser_CSCI_Final_Project
 
 Objective -
+
     The goal of Dean Moser and Joshua Jenkin's CSCI2270 final project
     is to apply what we have been learning into a functional program.
     We plan to utilize our recently developed understanding of hash-tables
@@ -11,6 +12,7 @@ Objective -
     problems with this idea, however in the event of hash collisions.
 
 Possible Roadblocks -
+
     Read in words may have the same hash value.
     When shifting word by gradient, if the destination has no words in the hash.
 
@@ -21,6 +23,7 @@ Possible Roadblocks -
     of hangman to solve the original phrase.
 
 Ideas for Issue Prevention -
+
     Instead of only revealing the encrypted message, extend the message to
     include encryption notes that are also encrypted.
     ie  "<e0-j> <n0-j>" or "<e0> <n0> <e1> <n1>" etc.
@@ -35,6 +38,7 @@ Ideas for Issue Prevention -
     was to ensure accurate output of decryption
 
 Note -
+
     The message will only encrypt real words.
      - (^ could, with added complication, eventually resolve this with a more
     traditional ascii enc. and some key word within the encrypted encryption
@@ -42,6 +46,7 @@ Note -
     the encrypted message, but we will leave that alone for now)
 
 Understanding - THE PLANO STANO
+
     Pre-Program:
         read in file of dictionary listing
         save in a hash table
@@ -56,10 +61,12 @@ Understanding - THE PLANO STANO
             [8]     [be]
             [9]     []
             [10]    [absolutely] [nasty]
+
     Input:
 |           "this is a test string of real words"
         turns into an array
             [this] [is] [a] [test] [string] [of] [real] [words] <msg (size) 8>
+
     Computation:
         creates an additional array of same size as original message for
         key notes
@@ -96,6 +103,7 @@ Understanding - THE PLANO STANO
             +
             [of] [nasty] [test] [is] [be] [dub] [a] [step] <n8>
             ->
+
     Output:
 |           [be] [of] [real] [nasty] [a] [test] [this] [is] [be] [absolutely] [be] [nasty] [dub] [step] [a] [nasty] [step] <o17>
         !so nonsensical, it almost makes sense!
