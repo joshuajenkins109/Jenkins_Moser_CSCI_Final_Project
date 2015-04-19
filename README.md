@@ -63,7 +63,7 @@ Understanding - THE PLANO STANO
             [10]    [absolutely] [nasty]
 
     Input:
-|           "this is a test string of real words"
+            *** "this is a test string of real words"
         turns into an array
             [this] [is] [a] [test] [string] [of] [real] [words] <msg (size) 8>
 
@@ -105,8 +105,9 @@ Understanding - THE PLANO STANO
             ->
 
     Output:
-|           [be] [of] [real] [nasty] [a] [test] [this] [is] [be] [absolutely] [be] [nasty] [dub] [step] [a] [nasty] [step] <o17>
+            *** [be] [of] [real] [nasty] [a] [test] [this] [is] [be] [absolutely] [be] [nasty] [dub] [step] [a] [nasty] [step] <o17>
         !so nonsensical, it almost makes sense!
+
     Decryption:
         Input:
                 [be] [of] [real] [nasty] [a] [test] [this] [is] [be] [absolutely] [be] [nasty] [dub] [step] [a] [nasty] [step] <i17>
@@ -129,4 +130,4 @@ Understanding - THE PLANO STANO
                 +
                 [] [] [!] [] [2] [0] [] [1] <tmp 8>
                 ->
-|               [this] [is] [a] [test] [string] [of] [real] [words] <o8>
+                ***[this] [is] [a] [test] [string] [of] [real] [words] <o8>
