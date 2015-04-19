@@ -1,5 +1,23 @@
 # Jenkins_Moser_CSCI_Final_Project
 
+Project Summary -
+
+How to Run -
+
+Dependencies -
+
+System Requirements -
+
+Group Members -
+    Dean Moser
+    Joshua Jenkins
+
+Contributors -
+
+Open Issues/Bugs -
+
+//////////////////////////////////////////////////////////////////////////////
+
 Objective -
 
     The goal of Dean Moser and Joshua Jenkin's CSCI2270 final project
