@@ -2,21 +2,34 @@
 
 Project Summary -
 
+    INSERT HERE
+
 How to Run -
+
+    INSERT HERE
 
 Dependencies -
 
+    INSERT HERE
+
 System Requirements -
 
+    INSERT HERE
+
 Group Members -
+
     Dean Moser
     Joshua Jenkins
 
 Contributors -
 
+    INSERT HERE
+
 Open Issues/Bugs -
 
-//////////////////////////////////////////////////////////////////////////////
+    INSERT HERE
+
+    //////////////////////////////////////////////////////////////////////////////
 
 Objective -
 
