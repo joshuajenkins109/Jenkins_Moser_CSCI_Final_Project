@@ -1,5 +1,5 @@
 #include "Program.h"
-
+#include <vector>
 Program::Program()
 {
     //ctor
@@ -32,4 +32,49 @@ int Program::checkSum(std::string word, int siz)
 
     sum = sum % siz;
     return sum;
+}
+/*
+    bool wordExist(string);
+    This function checks to see if the word already exists in the hashtable
+    if(wordExist("cat") == false) ...
+    Pre-Condition
+        HashTable exist
+        input expects string
+    Post-Condition
+        Returns true or false
+            True if word exists in hashtable, false if it doesn't
+*/
+bool Program::wordExist(std::string word)
+{
+    bool exist = false;
+    for(int i = 0; i < hashTable.size(); i++)
+    {
+        for(int j = 0; j < hashTable[i].words.size();j++)
+        {
+            if(hashTable[i].words[j] == word)
+            {
+                exist = true;
+                break;
+            }
+        }
+    }
+    return exist;
+}
+/*
+    void addWord(string)
+    This function adds a word to the hashtable if it isn't already there
+    addword("cat");
+    Pre-Condition
+        hashtable exists
+        string input expected
+    Post-Condition
+        word is added to hashtable
+*/
+void Program::addWord(std::string word)
+{
+    if( wordExist(word) == false)
+    {
+        hashTable[checkSum(word,hashTable.size())].words.push_back(word);
+    }
+
 }
