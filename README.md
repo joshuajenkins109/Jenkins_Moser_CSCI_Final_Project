@@ -4,17 +4,16 @@ Project Summary -
 
     The program contains a hashtable which contains the words in the english dictionary.
     The program will take in a sentence or group of words and a key, it will then be able to encrypt or decrypt based on the key provided.
-    The encryption works by changing each word by setting it to a different word in the hashtable based on the key. 
-    
+    The encryption works by changing each word by setting it to a different word in the hashtable based on the key.
 
 How to Run -
 
-   Decide what you want to do (encrypt/decrypt)
-   Enter sentense and key
+    Decide what you want to do (encrypt/decrypt)
+    Enter sentense and key
 
 Dependencies -
 
-    INSERT HERE
+    vector;string; - standard libraries
 
 System Requirements -
 
@@ -36,8 +35,8 @@ Open Issues/Bugs -
 ;
 
     //////////////////////////////////////////////////////////////////////////////
-
-;
+    DEVELOPMENT PROCESS PHASE I
+    //////////////////////////////////////////////////////////////////////////////
 
 Objective -
 
