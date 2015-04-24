@@ -26,7 +26,7 @@ class Program
     protected:
     private:
         vector<HashNode> hashTable; //upon creation, increases table to have predefined # of empty HashNodes
-        int tableSize = 0; //defining number for size of hashTable
+        int tableSize = 10; //defining number for size of hashTable
 };
 
 #endif // PROGRAM_H
