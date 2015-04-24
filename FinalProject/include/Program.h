@@ -18,6 +18,7 @@ class Program
 
     protected:
     private:
+        ///need to decide how we will create our hashtable and what type it will be, what size, ect.
 };
 
 #endif // PROGRAM_H
