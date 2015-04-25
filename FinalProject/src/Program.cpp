@@ -1,5 +1,6 @@
 #include "Program.h"
 #include <vector>
+#include <sstream>
 Program::Program()
 {
     for(int i = 0; i < tableSize; i++)
@@ -85,4 +86,46 @@ void Program::addWord(std::string word)
         hashTable[checkSum(word,hashTable.size())].words.push_back(word);
     }
 
+}
+
+std::string Program::encrypt(std::string message, int key)
+{
+    stringstream ss(message);
+    std::string in;
+    int track;
+    int start;
+    std::string change = "";
+    int collidecheck = 0;
+    std::string encrypted = "";
+
+
+    while(getline(ss,in,','))
+    {
+        track = 0;
+        if( wordExist(in) == false)
+        {
+            addWord(in);
+        }
+        start = checkSum(in, hashTable.size());
+        while(hashTable[start].words[collidecheck] != in)
+        {
+            collidecheck++;
+        }
+        while(change == "")
+        {
+            for(int i = collidecheck; i < hashTable[start].words.size(); i++)
+            {
+                if(track == key)
+                {
+                    change = hashTable[start].words[collidecheck];
+                    break;
+                }
+                track++;
+
+            }
+            start++;
+        }
+        encrypted += change;
+
+    }
 }
