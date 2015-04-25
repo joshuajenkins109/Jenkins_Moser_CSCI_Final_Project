@@ -5,6 +5,6 @@ using namespace std;
 
 int main()
 {
-    //new Program H; //H for hashTable
+    Program H; //H for hashTable
     return 0;
 }
