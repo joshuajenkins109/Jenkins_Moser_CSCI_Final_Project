@@ -35,6 +35,22 @@ Open Issues/Bugs -
 ;
 
     //////////////////////////////////////////////////////////////////////////////
+    DEVELOPMENT PROCESS PHASE II
+    //////////////////////////////////////////////////////////////////////////////
+
+Current Direction - (a more simplified approach)
+
+    For now, unless we manage to get everything working before the deadline,
+    we have decided that instead of encrypting the message and hiding a key
+    inside of the encrypted message with decryption instructions, we will
+    make the decryption method of a more "interpreted by the user" type.
+    So, instead of the program knowing the index of which word in a hash, it
+    will give all of the words in said hash and let the user put the puzzle
+    together.
+
+;
+
+    //////////////////////////////////////////////////////////////////////////////
     DEVELOPMENT PROCESS PHASE I
     //////////////////////////////////////////////////////////////////////////////
 
