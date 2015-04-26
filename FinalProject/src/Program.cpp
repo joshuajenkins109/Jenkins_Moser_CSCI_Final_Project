@@ -1,6 +1,7 @@
 #include "Program.h"
 #include <vector>
 #include <sstream>
+#include <iostream>
 
 Program::Program()
 {
@@ -69,6 +70,19 @@ bool Program::wordExist(std::string word)
         }
     }
     return exist;
+}
+
+void Program::printInventory()
+{
+    for(int i = 0; i < tableSize; i++)
+    {
+        std::cout<<i<<" : ";
+        for(int j = 0; j < hashTable[i].words.size(); j++)
+        {
+            std::cout<<hashTable[i].words[j]<<" ; ";
+        }
+        std::cout<<std::endl;
+    }
 }
 /*
     void addWord(string)
