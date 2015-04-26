@@ -102,7 +102,21 @@ void Program::addWord(std::string word)
     }
 
 }
+/*
+    string encrypt(string, key)
+    This function takes in a string of words and shifts them into different words
+    based on the key by going [key] number of words away from the word
 
+    encrypt("The cat says meow", 10)
+
+    Pre-Condition
+        The hashtable is built, words should be added, however if they aren't
+        encrypt will add the words from the sentence and the encrypt just wont work as well
+        message needs to be a string of words and the key needs to be a integer
+    Post-Condition
+        All words in message or shifted by key number and a new [encrypted]
+        sentence is built
+*/
 std::string Program::encrypt(std::string message, int key)
 {
     std::stringstream ss(message);
@@ -124,6 +138,10 @@ std::string Program::encrypt(std::string message, int key)
         }
         while(change == "")
         {
+            if(start == hashTable.size())
+            {
+                start = 0;
+            }
             for(int i = collidecheck; i < hashTable[start].words.size(); i++)
             {
                 if(track == key)
@@ -139,4 +157,5 @@ std::string Program::encrypt(std::string message, int key)
         encrypted += change;
 
     }
+    return encrypted;
 }
