@@ -17,7 +17,7 @@ class Program
 
         void createHashtable(); //this is where we build the Hashtable
         void addWord(std::string word); //use this to add a word to the table
-        int checkSum(std::string x, int s); //get sum of word ascii values and % by size of table
+        int checkSum(std::string x); //get sum of word ascii values and % by size of table
         bool wordExist(std::string word);
         void printInventory(); //this is to view the hashTable's contents
         std::string encrypt(std::string x, int key); //encrypt obviously
@@ -28,7 +28,7 @@ class Program
     protected:
     private:
         std::vector<HashNode> hashTable; //upon creation, increases table to have predefined # of empty HashNodes
-        int tableSize = 5000; //defining number for size of hashTable
+        int tableSize = 500; //defining number for size of hashTable
 };
 
 #endif // PROGRAM_H

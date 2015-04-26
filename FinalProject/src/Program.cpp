@@ -33,7 +33,7 @@ Program::~Program()
 
  */
 
-int Program::checkSum(std::string word, int siz)
+int Program::checkSum(std::string word)
 {
     int sum = 0;
     for(int i = 0; i < word.length(); i++)
@@ -41,7 +41,7 @@ int Program::checkSum(std::string word, int siz)
         sum = sum + (int)word[i];
     }
 
-    sum = sum % siz;
+    sum = sum % tableSize;
     return sum;
 }
 /*
@@ -98,7 +98,7 @@ void Program::addWord(std::string word)
 {
     if( wordExist(word) == false)
     {
-        hashTable[checkSum(word,hashTable.size())].words.push_back(word);
+        hashTable[checkSum(word)].words.push_back(word);
     }
 
 }
@@ -117,7 +117,7 @@ std::string Program::encrypt(std::string message, int key)
     while(getline(ss,in,','))
     {
         track = 0;
-        start = checkSum(in, hashTable.size());
+        start = checkSum(in);
         while(hashTable[start].words[collidecheck] != in)
         {
             collidecheck++;
