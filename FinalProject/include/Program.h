@@ -22,7 +22,7 @@ class Program
         void printHashTable(); //this is to view the hashTable's contents //done
         std::string encrypt(std::string x, int key); //encrypts message //done
         std::string decrypt(std::string x, int key); //decrypts message //done
-
+        void findWord(std::string x);
 
     protected:
     private:

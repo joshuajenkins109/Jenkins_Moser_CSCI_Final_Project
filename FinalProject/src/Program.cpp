@@ -102,12 +102,15 @@ void Program::printHashTable()
 {
     for(int i = 0; i < tableSize; i++)
     {
-        std::cout<<i<<" : ";
-        for(int j = 0; j < hashTable[i].words.size(); j++)
+        if(hashTable[i].words.size() > 0)
         {
-            std::cout<<hashTable[i].words[j]<<" ; ";
+            std::cout<<i<<" : ";
+            for(int j = 0; j < hashTable[i].words.size(); j++)
+            {
+                std::cout<<hashTable[i].words[j]<<" ; ";
+            }
+            std::cout<<std::endl;
         }
-        std::cout<<std::endl;
     }
 }
 /*
@@ -245,4 +248,26 @@ std::stringstream ss(message);
 
     }
     return decrypted;
+}
+
+void Program::findWord(std::string word)
+{
+    int h = checkSum(word);
+    bool found = false;
+    for(int i = 0; i < hashTable[h].words.size(); i++)
+    {
+        if(hashTable[h].words[i] == word)
+        {
+            found = true;
+            break;
+        }
+    }
+    if(found)
+    {
+        std::cout<<"found at hash value: "<<h<<std::endl;
+    }
+    else
+    {
+        std::cout<<"word not found"<<std::endl;
+    }
 }

@@ -9,8 +9,7 @@ void dispMenu();
 int main()
 {
     Program H; //H for hashTable
-
-    H.createHashtable();
+    H.createHashtable(); //Read in our file with all words
 
     dispMenu();
     bool quit = false;
