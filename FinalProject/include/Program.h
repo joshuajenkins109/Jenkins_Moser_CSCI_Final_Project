@@ -15,15 +15,14 @@ class Program
         Program();
         virtual ~Program();
 
-        void createHashtable(); //this is where we build the Hashtable
+        void createHashtable(); //this is where we build the Hashtable//done
         void addWord(std::string word); //use this to add a word to the table //done
         int checkSum(std::string x); //get sum of word ascii values and % by size of table //done
         bool wordExist(std::string word);//Checks to see if word is in hashtable //done
-        void printInventory(); //this is to view the hashTable's contents //done
+        void printHashTable(); //this is to view the hashTable's contents //done
         std::string encrypt(std::string x, int key); //encrypts message //done
-        std::string decrypt(std::string x, int key); //decrypt obviously..
+        std::string decrypt(std::string x, int key); //decrypts message //done
 
-        //What other functions could we include? we need 10
 
     protected:
     private:

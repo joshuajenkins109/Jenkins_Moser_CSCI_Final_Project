@@ -10,18 +10,7 @@ int main()
 {
     Program H; //H for hashTable
 
-    string word;
-    ifstream infile("google-10000-english.txt");
-    infile >> word;
-    //cout<<word<<endl;
-    H.addWord(word);
-    while(!infile.eof())
-    {
-        infile >> word;
-        //cout<<word<<endl;
-        H.addWord(word);
-    }
-    infile.close();
+    H.createHashtable();
 
     dispMenu();
     bool quit = false;
@@ -43,7 +32,7 @@ int main()
                 dispMenu();
                 break;
             case 3:
-                H.printInventory();
+                H.printHashTable();
                 dispMenu();
                 break;
             case 4:
