@@ -19,6 +19,7 @@ Program::~Program()
 {
     //dtor
 }
+
 /*
     void createHashtable();
     This function creates the hashtable by adding words from an outside source
@@ -29,6 +30,7 @@ Program::~Program()
     Post-condition
         hashtable contains all words from read in file
 */
+
 void Program::createHashtable()
 {
     std::string word;
@@ -43,9 +45,9 @@ void Program::createHashtable()
         addWord(word);
     }
     infile.close();
-
 }
- /*
+
+/*
     int CheckSum(string);
     This is just the basic function that determines
     the location for the word in the hashTable based on the ascii values.
@@ -56,8 +58,7 @@ void Program::createHashtable()
         word is a string
     Post-Conditions:
         Returns location that word should be in hashTable
-
- */
+*/
 
 int Program::checkSum(std::string word)
 {
@@ -70,6 +71,7 @@ int Program::checkSum(std::string word)
     sum = sum % tableSize;
     return sum;
 }
+
 /*
     bool wordExist(string);
     This function checks to see if the word already exists in the hashtable
@@ -81,6 +83,7 @@ int Program::checkSum(std::string word)
         Returns true or false
             True if word exists in hashtable, false if it doesn't
 */
+
 bool Program::wordExist(std::string word)
 {
     int hsh = checkSum(word);
@@ -95,6 +98,7 @@ bool Program::wordExist(std::string word)
     }
     return exist;
 }
+
 /*
     void printHashTable();
     This function goes through the hashtable and prints every word
@@ -104,6 +108,7 @@ bool Program::wordExist(std::string word)
     Post-Condition
         all words in hashtable printed
 */
+
 void Program::printHashTable()
 {
     for(int i = 0; i < tableSize; i++)
@@ -119,6 +124,7 @@ void Program::printHashTable()
         }
     }
 }
+
 /*
     void addWord(string)
     This function adds a word to the hashtable if it isn't already there
@@ -129,6 +135,7 @@ void Program::printHashTable()
     Post-Condition
         word is added to hashtable
 */
+
 void Program::addWord(std::string word)
 {
     if(wordExist(word) == false)
@@ -136,6 +143,7 @@ void Program::addWord(std::string word)
         hashTable[checkSum(word)].words.push_back(word);
     }
 }
+
 void Program::delWord(std::string word)
 {
     if(wordExist(word) == true)
@@ -160,6 +168,7 @@ void Program::delWord(std::string word)
         hashTable[hsh].words.pop_back();
     }
 }
+
 /*
     string encrypt(string, key)
     This function takes in a string of words and shifts them into different words
@@ -175,6 +184,7 @@ void Program::delWord(std::string word)
         All words in message or shifted by key number and a new [encrypted]
         sentence is built
 */
+
 std::string Program::encrypt(std::string message, int key)
 {
     std::stringstream ss(message);
@@ -216,7 +226,6 @@ std::string Program::encrypt(std::string message, int key)
                     //break;
                 }
                 track++;
-
             }
             start++;
         }
@@ -225,6 +234,7 @@ std::string Program::encrypt(std::string message, int key)
     }
     return encrypted;
 }
+
 /*
 string decrypt(string);
 Decrypt is the opposite of encrypt, it shifts the words backwards
@@ -238,18 +248,18 @@ Pre-Condition
     right now.
 Post-Condition
     sentence is decrypted, and returns to the original message that was encrypted
-
 */
+
 std::string Program::decrypt(std::string message, int key)
 {
-std::stringstream ss(message);
+    //key = -key;
+    std::stringstream ss(message);
     std::string in;
     int track;
     int start;
     std::string change = "";
     int collidecheck = 0;
     std::string decrypted = "";
-
 
     while(getline(ss,in,' '))
     {
@@ -266,7 +276,7 @@ std::stringstream ss(message);
         {
             if(start == -1)
             {
-                start = tableSize;
+                start = tableSize - 1;
             }
             for(int i = collidecheck; i >= 0; i--)
             {
@@ -276,13 +286,11 @@ std::stringstream ss(message);
                     //break;
                 }
                 track++;
-
             }
             start--;
         }
         std::cout<<"change is: "<<change<<std::endl;
         decrypted = decrypted + " "+ change;
-
     }
     return decrypted;
 }
@@ -302,6 +310,15 @@ void Program::findWord(std::string word)
     if(found)
     {
         std::cout<<"found at hash value: "<<h<<std::endl;
+        std::cout<<"along with: ";
+        for(int i = 0; i < hashTable[h].words.size(); i++)
+        {
+            if(hashTable[h].words[i] != word)
+            {
+                std::cout<<hashTable[h].words[i]<<"; ";
+            }
+        }
+        std::cout<<std::endl;
     }
     else
     {

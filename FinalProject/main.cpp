@@ -54,6 +54,12 @@ int main()
                 //dispMenu();
                 break;
             case 4:
+                cout<<"enter a word to search inventory for:"<<endl;
+                getline(cin,msg);
+                cin.clear();
+                H.findWord(msg);
+                break;
+            case 5:
                 quit = true;
                 break;
             default:
@@ -71,6 +77,7 @@ void dispMenu()
     cout<<"1.encrypt"<<endl;
     cout<<"2.decrypt"<<endl;
     cout<<"3.print inventory"<<endl;
-    cout<<"4.quit"<<endl;
+    cout<<"4.find word"<<endl;
+    cout<<"5.quit"<<endl;
     cout<<"========================"<<endl;
 }
