@@ -11,10 +11,11 @@ int main()
     Program H; //H for hashTable
     H.createHashtable(); //Read in our file with all words
 
-    dispMenu();
+    //dispMenu();
     bool quit = false;
     while(!quit)
     {
+        dispMenu();
         int cmd = -1;
         string rawInput;
         int key = -1;
@@ -22,6 +23,7 @@ int main()
         getline(cin,rawInput);
         cin.clear();
         cmd = atoi(rawInput.c_str());
+        //dispMenu();
         switch(cmd)
         {
             case 1:
@@ -34,7 +36,7 @@ int main()
                 cin >> key;
                 cin.clear();
                 cout<<H.encrypt(msg,key)<<endl;
-                dispMenu();
+               // dispMenu();
                 break;
             case 2:
                 //fix decryption
@@ -45,18 +47,18 @@ int main()
                 cin >> key;
                 cin.clear();
                 cout<<H.decrypt(msg,key)<<endl;
-                dispMenu();
+                //dispMenu();
                 break;
             case 3:
                 H.printHashTable();
-                dispMenu();
+                //dispMenu();
                 break;
             case 4:
                 quit = true;
                 break;
             default:
                 cout<<"error: not a valid command"<<endl;
-                dispMenu();
+                //dispMenu();
                 break;
         }
     }

@@ -46,7 +46,7 @@ void Program::createHashtable()
 
 }
  /*
-    int CheckSum(string, int);
+    int CheckSum(string);
     This is just the basic function that determines
     the location for the word in the hashTable based on the ascii values.
     hashTable[checkSum("cat")] = "cat";
@@ -97,7 +97,15 @@ bool Program::wordExist(std::string word)
     }
     return exist;
 }
-
+/*
+    void printHashTable();
+    This function goes through the hashtable and prints every word
+    Pre-Condition
+        hashtable exists
+        there should be words added to the table(though it wont cause an error without them)
+    Post-Condition
+        all words in hashtable printed
+*/
 void Program::printHashTable()
 {
     for(int i = 0; i < tableSize; i++)
@@ -180,13 +188,17 @@ std::string Program::encrypt(std::string message, int key)
     std::string encrypted = "";
 
 
-    while(getline(ss,in,','))
+    while(getline(ss,in,' '))
     {
+        std::cout<<"in is: "<<in<<std::endl;
         track = 0;
+        collidecheck = 0;
         start = checkSum(in);
+        change = "";
         if(wordExist(in) == false)
         {
             addWord(in);
+            std::cout<<"FAILED FAILED FAILED"<<std::endl;
         }
         while(hashTable[start].words[collidecheck] != in)
         {
@@ -203,14 +215,15 @@ std::string Program::encrypt(std::string message, int key)
                 if(track == key)
                 {
                     change = hashTable[start].words[collidecheck];
-                    break;
+                    //break;
                 }
                 track++;
 
             }
             start++;
         }
-        encrypted += change;
+        std::cout<<"change is: "<<change<<std::endl;
+        encrypted = encrypted +" "+ change;
     }
     return encrypted;
 }
@@ -240,10 +253,13 @@ std::stringstream ss(message);
     std::string decrypted = "";
 
 
-    while(getline(ss,in,','))
+    while(getline(ss,in,' '))
     {
+        std::cout<<"in is: "<<std::endl;
         track = 0;
         start = checkSum(in);
+        collidecheck = 0;
+        change = "";
         while(hashTable[start].words[collidecheck] != in)
         {
             collidecheck++;
@@ -259,14 +275,15 @@ std::stringstream ss(message);
                 if(track == key)
                 {
                     change = hashTable[start].words[collidecheck];
-                    break;
+                    //break;
                 }
                 track++;
 
             }
             start--;
         }
-        decrypted += change;
+        std::cout<<"change is: "<<change<<std::endl;
+        decrypted = decrypted + " "+ change;
 
     }
     return decrypted;
