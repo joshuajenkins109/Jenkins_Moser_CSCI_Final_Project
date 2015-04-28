@@ -27,7 +27,7 @@ class Program
     protected:
     private:
         std::vector<HashNode> hashTable; //upon creation, increases table to have predefined # of empty HashNodes
-        int tableSize = 2500; //defining number for size of hashTable
+        int tableSize = 2000; //defining number for size of hashTable
 };
 
 #endif // PROGRAM_H

@@ -17,17 +17,34 @@ int main()
     {
         int cmd = -1;
         string rawInput;
+        int key = -1;
+        string msg;
         getline(cin,rawInput);
         cin.clear();
         cmd = atoi(rawInput.c_str());
         switch(cmd)
         {
             case 1:
-                //insert encryption
+                ///something is broken with enc/dec methods
+                //fix encryption
+                cout<<"please enter a message to be encrypted:"<<endl;
+                getline(cin,msg);
+                cin.clear();
+                cout<<"enter integer for encryption key:"<<endl;
+                cin >> key;
+                cin.clear();
+                cout<<H.encrypt(msg,key)<<endl;
                 dispMenu();
                 break;
             case 2:
-                //insert decryption
+                //fix decryption
+                cout<<"please enter a message to be decrypted:"<<endl;
+                getline(cin,msg);
+                cin.clear();
+                cout<<"enter integer for decryption key:"<<endl;
+                cin >> key;
+                cin.clear();
+                cout<<H.decrypt(msg,key)<<endl;
                 dispMenu();
                 break;
             case 3:
