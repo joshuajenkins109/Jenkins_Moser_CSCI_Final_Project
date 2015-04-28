@@ -9,7 +9,7 @@ Project Summary -
 How to Run -
 
     Decide what you want to do (encrypt/decrypt)
-    Enter sentense and key
+    Enter sentence and key
 
 Dependencies -
 
@@ -33,6 +33,7 @@ Contributors -
 Open Issues/Bugs -
 
     encrypt/decrypt are not functioning like we had hoped
+    Menu displaying twice after input is over
 
 ;
 
@@ -49,6 +50,10 @@ Current Direction - (a more simplified approach)
     So, instead of the program knowing the index of which word in a hash, it
     will give all of the words in said hash and let the user put the puzzle
     together.
+
+	update:
+    decrypt (though not working perfectly) will not display all words in hash, since encrypt and decrypt
+    were implemented to count based on words rather than index, so it is supposed to print the exact word 
 
 ;
 
