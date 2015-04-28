@@ -83,16 +83,14 @@ int Program::checkSum(std::string word)
 */
 bool Program::wordExist(std::string word)
 {
+    int hsh = checkSum(word);
     bool exist = false;
-    for(int i = 0; i < hashTable.size(); i++)
+    for(int i = 0; i < hashTable[hsh].words.size(); i++)
     {
-        for(int j = 0; j < hashTable[i].words.size();j++)
+        if(hashTable[hsh].words[i] == word)
         {
-            if(hashTable[i].words[j] == word)
-            {
-                exist = true;
-                break;
-            }
+            exist = true;
+            break;
         }
     }
     return exist;
