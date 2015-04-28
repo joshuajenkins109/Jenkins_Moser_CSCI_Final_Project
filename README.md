@@ -13,11 +13,13 @@ How to Run -
 
 Dependencies -
 
-    vector;string; - standard libraries
+    vector;string;fstream;sstream - standard libraries
+    google-10000-english.txt - Josh Kaufman https://github.com/first20hours/google-10000-english
 
 System Requirements -
 
-    INSERT HERE
+    running linux for no ability to build project
+    code::blocks
 
 Group Members -
 
@@ -26,11 +28,11 @@ Group Members -
 
 Contributors -
 
-    INSERT HERE
+    Josh Kaufman https://github.com/first20hours/google-10000-english
 
 Open Issues/Bugs -
 
-    INSERT HERE
+    encrypt/decrypt are not functioning like we had hoped
 
 ;
 
