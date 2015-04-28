@@ -125,11 +125,34 @@ void Program::printHashTable()
 */
 void Program::addWord(std::string word)
 {
-    if( wordExist(word) == false)
+    if(wordExist(word) == false)
     {
         hashTable[checkSum(word)].words.push_back(word);
     }
-
+}
+void Program::delWord(std::string word)
+{
+    if(wordExist(word) == true)
+    {
+        int hsh = checkSum(word);
+        bool found = false;
+        int i = 0;
+        while(i < hashTable[hsh].words.size() && !found)
+        {
+            if(hashTable[hsh].words[i] == word)
+            {
+                found = true;
+            }
+            i++;
+        }
+        while(i < hashTable[hsh].words.size() - 1)
+        {
+            std::string temp = hashTable[hsh].words[i+1];
+            hashTable[hsh].words[i+1] = hashTable[hsh].words[i];
+            hashTable[hsh].words[i] = temp;
+        }
+        hashTable[hsh].words.pop_back();
+    }
 }
 /*
     string encrypt(string, key)
@@ -171,7 +194,7 @@ std::string Program::encrypt(std::string message, int key)
         }
         while(change == "")
         {
-            if(start == hashTable.size())
+            if(start == tableSize)
             {
                 start = 0;
             }
@@ -188,7 +211,6 @@ std::string Program::encrypt(std::string message, int key)
             start++;
         }
         encrypted += change;
-
     }
     return encrypted;
 }
@@ -230,7 +252,7 @@ std::stringstream ss(message);
         {
             if(start == -1)
             {
-                start = hashTable.size();
+                start = tableSize;
             }
             for(int i = collidecheck; i >= 0; i--)
             {

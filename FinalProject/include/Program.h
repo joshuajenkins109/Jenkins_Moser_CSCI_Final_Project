@@ -17,6 +17,7 @@ class Program
 
         void createHashtable(); //this is where we build the Hashtable//done
         void addWord(std::string word); //use this to add a word to the table //done
+        void delWord(std::string word); //use this to remove a word from the table in
         int checkSum(std::string x); //get sum of word ascii values and % by size of table //done
         bool wordExist(std::string word);//Checks to see if word is in hashtable //done
         void printHashTable(); //this is to view the hashTable's contents //done
