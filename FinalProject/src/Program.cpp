@@ -143,7 +143,16 @@ void Program::addWord(std::string word)
         hashTable[checkSum(word)].words.push_back(word);
     }
 }
+/*
+    void delWord(word)
+    this is a function added to meet number requirements, it deletes
+    words from the hashtable if you wanted to do that for some reason.
 
+    Pre-Condition
+        word exist in existing hashtable
+    Post-condition
+        word is no longer in hashtable
+*/
 void Program::delWord(std::string word)
 {
     if(wordExist(word) == true)
@@ -198,7 +207,7 @@ std::string Program::encrypt(std::string message, int key)
 
     while(getline(ss,in,' '))
     {
-        std::cout<<"in is: "<<in<<std::endl;
+        //::cout<<"in is: "<<in<<std::endl;
         track = 0;
         collidecheck = 0;
         start = checkSum(in);
@@ -206,7 +215,7 @@ std::string Program::encrypt(std::string message, int key)
         if(wordExist(in) == false)
         {
             addWord(in);
-            std::cout<<"FAILED FAILED FAILED"<<std::endl;
+            //std::cout<<"FAILED FAILED FAILED"<<std::endl;
         }
         while(hashTable[start].words[collidecheck] != in)
         {
@@ -222,14 +231,15 @@ std::string Program::encrypt(std::string message, int key)
             {
                 if(track == key)
                 {
-                    change = hashTable[start].words[collidecheck];
-                    //break;
+                    change = hashTable[start].words[i];
+                    break;
                 }
-                track++;
+               //std::cout<<"ON THE MOVE:  "<< hashTable[start].words[i];
+               track++;
             }
             start++;
         }
-        std::cout<<"change is: "<<change<<std::endl;
+        //std::cout<<"change is: "<<change<<std::endl;
         encrypted = encrypted +" "+ change;
     }
     return encrypted;
@@ -263,7 +273,7 @@ std::string Program::decrypt(std::string message, int key)
 
     while(getline(ss,in,' '))
     {
-        std::cout<<"in is: "<<std::endl;
+        //std::cout<<"in is: "<<std::endl;
         track = 0;
         start = checkSum(in);
         collidecheck = 0;
@@ -282,14 +292,14 @@ std::string Program::decrypt(std::string message, int key)
             {
                 if(track == key)
                 {
-                    change = hashTable[start].words[collidecheck];
+                    change = hashTable[start].words[i];
                     //break;
                 }
                 track++;
             }
             start--;
         }
-        std::cout<<"change is: "<<change<<std::endl;
+        //std::cout<<"change is: "<<change<<std::endl;
         decrypted = decrypted + " "+ change;
     }
     return decrypted;

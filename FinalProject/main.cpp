@@ -13,15 +13,21 @@ int main()
 
     //dispMenu();
     bool quit = false;
+    string rawInput;
+    string msg;
+    int cmd = -1;
+    int key = -1;
     while(!quit)
     {
         dispMenu();
-        int cmd = -1;
-        string rawInput;
-        int key = -1;
-        string msg;
+        //int cmd = -1;
+        //string rawInput;
+        //int key = -1;
+
+        //string msg;
         getline(cin,rawInput);
         cin.clear();
+
         cmd = atoi(rawInput.c_str());
         //dispMenu();
         switch(cmd)
@@ -62,10 +68,10 @@ int main()
             case 5:
                 quit = true;
                 break;
-            default:
-                cout<<"error: not a valid command"<<endl;
+            //default:
+                //cout<<"error: not a valid command"<<endl;
                 //dispMenu();
-                break;
+                //break;
         }
     }
     return 0;
