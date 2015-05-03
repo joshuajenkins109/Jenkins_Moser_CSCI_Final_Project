@@ -304,7 +304,15 @@ std::string Program::decrypt(std::string message, int key)
     }
     return decrypted;
 }
-
+/*
+    void findWord(string);
+    findWOrd will search the hashtable and tell you if the word is found in it. if it is
+    found it prints out the index and the words found with it.
+    Pre-
+        Hashtable exists
+    Post-
+        prints out if word is found or not
+*/
 void Program::findWord(std::string word)
 {
     int h = checkSum(word);

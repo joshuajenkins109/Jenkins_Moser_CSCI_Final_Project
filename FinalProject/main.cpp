@@ -66,6 +66,12 @@ int main()
                 H.findWord(msg);
                 break;
             case 5:
+                cout<<"enter  a word to delete"<<endl;
+                getline(cin,msg);
+                cin.clear();
+                H.delWord(msg);
+                break;
+            case 6:
                 quit = true;
                 break;
             //default:
@@ -84,6 +90,7 @@ void dispMenu()
     cout<<"2.decrypt"<<endl;
     cout<<"3.print inventory"<<endl;
     cout<<"4.find word"<<endl;
-    cout<<"5.quit"<<endl;
+    cout<<"5.Delete Word"<<endl;
+    cout<<"6.quit"<<endl;
     cout<<"========================"<<endl;
 }
