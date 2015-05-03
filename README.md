@@ -8,8 +8,10 @@ Project Summary -
 
 How to Run -
 
-    Decide what you want to do (encrypt/decrypt)
-    Enter sentence and key
+    Build in CodeBlocks File, compile and run within codeblocks,follow options in menu.
+		If you can't seem to get it to run I recommend creating a seperate code blocks file, copying our main into the main and adding a class
+		to the file named as ours is and then copying the code into those as well. It's kinda a makeshift work around as far as getting it to work
+		but I'm not sure what else to do if it doesn't just run when you clone it.
 
 Dependencies -
 
